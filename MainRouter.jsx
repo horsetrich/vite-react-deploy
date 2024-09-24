@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './components/Home'
 import About from './src/About'
 import Contact from './src/Contact'
@@ -12,6 +12,7 @@ const MainRouter = () => {
     return (
         <div >
             <Layout/>
+            <BrowserRouter basename="/vite-react-deploy/">
             <Routes>
                 <Route exact path="/" element={<Home />} />
                 <Route exact path="/About" element={<About />} />
@@ -20,6 +21,7 @@ const MainRouter = () => {
                 <Route exact path="/Project" element={<Project/>} />
                 <Route exact path="/Services" element={<Services />} />
             </Routes>
+            </BrowserRouter>
         </div>
     );
 };
